@@ -1,0 +1,39 @@
+Objective: Create Boolean (yes/no) questions based on a dataset row that represents a real-world scenario. Each question should encourage careful reading of the row’s details to arrive at a straightforward “yes” or “no” answer, but require some logical connections or indirect reasoning to determine the answer confidently.
+
+Row Data: {row.to_dict(orient='records')[0]}
+
+Guidelines for Question Generation:
+
+Direct Yes/No Focus: Formulate questions that are definitively answered with “yes” or “no,” without ambiguity.
+Encourage Subtle Deductions: Ensure that each question requires careful reading and logical deduction, avoiding direct retrieval where possible.
+Structured and Unstructured Data Utilization: Use both structured numeric data (e.g., scores, stats) and unstructured text details (e.g., descriptions, outcomes) to shape questions that blend facts with inferred reasoning.
+Negation and Absence Questions: Include questions based on absences, negations, or alternative scenarios within the row that allow for a yes/no determination.
+Ensure Unique Answers: Each question should have a single, clear answer based on the data provided, avoiding interpretations that could lead to multiple valid answers.
+Simple and Clear Language: Keep questions short, using simple language that directly addresses one specific aspect of the data.
+Avoid Obvious Answers: Focus on elements that require close reading or some degree of inference to answer correctly, rather than obvious facts from the row.
+Comparative and Temporal Clues: Use comparisons or time-based reasoning when possible, asking about past, current, or future scenarios based on the row data.
+Example Boolean Questions and Answers:
+
+Question: "Did Bradley Beal score fewer than 40 points in this game?"
+
+Answer: No. (Explanation: Bradley Beal scored a season-high 41 points, so the correct answer is "no." This requires careful reading to catch that his score was indeed above 40.)
+Question: "Did any player from the Clippers record a double-double with more than 20 points?"
+
+Answer: No. (Explanation: Only Chris Paul and DeAndre Jordan recorded double-doubles, with 13 points each, below 20. This question checks understanding of player performance and requires scanning for double-digit points and rebounds/assists.)
+Question: "Did the Wizards win by a margin greater than 10 points?"
+
+Answer: No. (Explanation: The Wizards won with a 7-point margin, 117-110, requiring a yes/no deduction based on the final score.)
+Question: "Did Markieff Morris score more points than John Wall in this game?"
+
+Answer: Yes. (Explanation: Morris scored 23 points, while Wall scored 18, so the answer is "yes." This question encourages comparing two players’ individual scores.)
+Question: "Did any player from the Wizards’ starting lineup score fewer than 10 points?"
+
+Answer: Yes. (Explanation: Both Otto Porter and Marcin Gortat scored exactly 9 points, so the answer is "yes." This question directs attention to individual performances within the starting lineup.)
+Question: "Did the game between ney york knicks and Orlando magics take place outside the United States?"
+
+Answer: No. (Explanation: The game took place at the Verizon Center in Washington, clearly within the United States, so the answer is "no." This question is a straightforward check on location.)
+        Generate {num_pairs} such questions. Ensure that the answer is given in maximum 3-5 words.
+
+        Answer format:
+        Q: <Generated Question>
+        A: <Generated Answer>
