@@ -1,0 +1,33 @@
+Objective:
+    Create complex, counterfactual or negative reasoning questions based on a dataset row that represents a real-world scenario. Each question should focus on events or conditions that did not occur, encouraging the reader to think about absences, exclusions, or hypothetical scenarios that require detailed understanding and logic.
+
+    Row Data: {row.to_dict(orient='records')[0]}
+
+    Guidelines for Question Generation:
+        1. Inter-Cell Logic: Questions must connect multiple data points within the row, encouraging indirect reasoning between structured and unstructured components.
+        2. Structured + Unstructured: Utilize both types of data (e.g., scores, descriptions) when formulating questions.
+        3. Avoid Direct Retrieval: Do not allow answers to be directly extracted from the row; ensure questions require reasoning.
+        4. Multi-hop Reasoning: Answers should require multiple logical operations or connections to arrive at.
+        5. Unique, Deterministic Answer: Ensure only one valid answer can be derived from the data, based on logical connections.
+        6. Simplified Language: Keep the language of questions concise and clear, avoiding unnecessary complexity.
+        7. No Word Overlap: Avoid using the same words or phrases from the row in the questions to maintain a level of difficulty.
+        8. Single Subtle Hint: Include one subtle clue to guide the reasoning, but ensure further deductions are needed for the correct answer.
+        10. Semantic Diversity: Aim for semantic diversity in the questions, avoiding repetition of themes or concepts.
+        11. Negation of Events or Conditions: Formulate questions around events, outcomes, or characteristics that are explicitly absent or did not happen, based on the row’s details.
+        12. Indirect Reasoning and Counterfactuals: Encourage reasoning that involves thinking about what would be different if certain events or details were missing or reversed.
+        13. Use of Hypotheticals: Pose questions that require imagining alternate outcomes or hypothetical adjustments to specific elements of the row.
+        14. Multi-Step Deduction for Negative Scenarios: Ensure each question requires a multi-step logical deduction or comparison involving details that are negated or counterfactual.
+
+    Example Questions:
+       1. "If Bradley Beal had scored only 30 points instead of his season-high, who would likely have been the top scorer for the Wizards?"
+       Explanation: If Beal had scored 30 points instead of his 41, Markieff Morris, who scored 23 points, would be the second-highest scorer but would still be behind Beal’s reduced total.
+       2. "Which Clippers player did not have at least 10 rebounds or 10 assists in this game?"
+       3. "If Chris Paul hadn’t recorded his double-double, how many Clippers players would still have had a double-double, and what would their team’s assist total be without Paul’s 12 assists?"
+       4. "If Blake Griffin had not led the Clippers in scoring, who would be the next highest scorer, and how many points would that player need to match Griffin’s total?"
+       5. Which philly game was held in a non summer month and had player with a serious injury?
+
+        Generate {num_pairs} such questions. Ensure that the answer is given in maximum 3-5 words.
+
+        Answer format:
+        Q: <Generated Question>
+        A: <Generated Answer>
