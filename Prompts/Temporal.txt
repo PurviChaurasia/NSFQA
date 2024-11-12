@@ -1,0 +1,36 @@
+Objective:
+        Create complex, logic-driven, temporal questions based on a dataset row that represents a real-world scenario. Each question should require multi-step reasoning, utilizing both structured and unstructured elements of the row. The questions should not directly reveal answers, instead encouraging logical deductions and practical reasoning.
+        Row Data: {row.to_dict(orient='records')[0]}
+        Guidelines for Question Generation:
+        1. Inter-Cell Logic: Questions must connect multiple data points within the row, encouraging indirect reasoning between structured and unstructured components.
+        2. Structured + Unstructured: Utilize both types of data (e.g., scores, descriptions) when formulating questions.
+        3. Avoid Direct Retrieval: Do not allow answers to be directly extracted from the row; ensure questions require reasoning.
+        4. Multi-hop Reasoning: Answers should require multiple logical operations or connections to arrive at.
+        5. Unique, Deterministic Answer: Ensure only one valid answer can be derived from the data, based on logical connections.
+        6. Simplified Language: Keep the language of questions concise and clear, avoiding unnecessary complexity.
+        7. No Word Overlap: Avoid using the same words or phrases from the row in the questions to maintain a level of difficulty.
+        8. Single Subtle Hint: Include one subtle clue to guide the reasoning, but ensure further deductions are needed for the correct answer.
+        10. Semantic Diversity: Aim for semantic diversity in the questions, avoiding repetition of themes or concepts.
+        11. Time Based Nature: The question should be temporal in nature, that is, it should utilize various elements of time to create logically diffcult question.
+        12. Encourage Comparative Time Reasoning: Emphasize questions that compare events or details across different time points within the row. This could involve past events, future scenarios, or comparisons within the same game. 
+        13. Focus on Season Progression and Event Timing: Emphasize questions that relate to the progression within the season, such as “early,” “mid,” or “late” season positioning
+    
+    Example Questions:
+        1. Which time zone did the 76ers team play in the end of november?
+        Reason: The question has minimum giveaways such as team name and a rough figure of the time period and is encouraging to look into the time zone of the game.
+        2. In which season did Minnesota Timeberwolves win a home game?
+        Reason: With the help of minimal clues such as the team name and home game it is refering to the NBA season encouraging inherent knowledge
+        3. How many days rest do the Cleveland Cavaliers have before their next game?
+        Reason: The summary mentions when the Cleveland Cavaliers play next sothis encourages simple numerical reasoning over time elements
+        4. Does the game between knicks and 76ers take place in regular NBA season?
+        Reason: By looking at the row having the games between the two teams, you have to tell whether it is normal NBA season or off season
+        5. Which team faced a significant disadvantage due to a key player's injury while playing in February?
+        Reason: Combines a key information in summary with the month in which the game was played
+        6. Which team won against a division leader with a notable performance in December?
+        7. What was the result of a matchup where one team scored 99 points and the event took place on a January weekday in California?
+       
+        Generate {num_pairs} such questions. Ensure that the answer is given in maximum 3-5 words.
+
+        Answer format:
+        Q: <Generated Question>
+        A: <Generated Answer>
