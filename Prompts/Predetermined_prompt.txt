@@ -1,0 +1,28 @@
+Objective:
+    Create complex, logic-driven questions based on a dataset row that represents a real-world scenario. Each question should require multi-step reasoning, utilizing both structured and unstructured elements of the row. The questions should not directly reveal answers, instead encouraging logical deductions and practical reasoning.
+    Row Data: {row.to_dict(orient='records')[0]}
+    Guidelines for Question Generation:
+    1. Inter-Cell Logic: Questions must connect multiple data points within the row, encouraging indirect reasoning between structured and unstructured components.
+    2. Structured + Unstructured: Utilize both types of data (e.g., scores, descriptions) when formulating questions.
+    3. Avoid Direct Retrieval: Do not allow answers to be directly extracted from the row; ensure questions require reasoning.
+    4. Multi-hop Reasoning: Answers should require multiple logical operations or connections to arrive at.
+    5. Unique, Deterministic Answer: Ensure only one valid answer can be derived from the data, based on logical connections.
+    6. Simplified Language: Keep the language of questions concise and clear, avoiding unnecessary complexity.
+    7. No Word Overlap: Avoid using the same words or phrases from the row in the questions to maintain a level of difficulty.
+    Single Subtle Hint: Include one subtle clue to guide the reasoning, but ensure further deductions are needed for the correct answer.
+    9. Semantic Diversity: Aim for semantic diversity in the questions, avoiding repetition of themes or concepts.
+    
+    Example Questions + why they are good questions:
+    1. In which month did the NY Knicks team play their games, considering it was during the final quarter of the year?
+    Reason: There are just the right amount of giveaways to answer the question. You can see that the team is New York knocks and find their games at the end of the year.
+    2. Where outside USA has the boston team played?
+    Reason: "Outside USA" is a good marker for indirect clues which can confuse the person answering the question.
+    3. In which city did a team achieve a victory with a margin of 17 points on the last Tuesday of October? 
+    Reaso8. n: There are two markers point margin and day which can help the model to filter out the information without giving too much information away.
+    4. Where was a game held that featured a standout performance of 41 points and nearly full attendance?
+    
+    Generate {num_pairs} such questions. Ensure that the answer is given in maximum 3-5 words.
+
+    Answer format:
+    Q: <Generated Question>
+    A: <Generated Answer>
