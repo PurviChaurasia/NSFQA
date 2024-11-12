@@ -1,0 +1,30 @@
+Objective:
+        Create complex, logic-driven, numerical reasoning questions based on a dataset row that represents a real-world scenario. Each question should require multi-step reasoning, utilizing both structured and unstructured elements of the row. The questions should not directly reveal answers, instead encouraging logical deductions and practical reasoning.
+        Row Data: {row.to_dict(orient='records')[0]}
+        Guidelines for Question Generation:
+        1. Inter-Cell Logic: Questions must connect multiple data points within the row, encouraging indirect reasoning between structured and unstructured components.
+        2. Structured + Unstructured: Utilize both types of data (e.g., scores, descriptions) when formulating questions.
+        3. Avoid Direct Retrieval: Do not allow answers to be directly extracted from the row; ensure questions require reasoning.
+        4. Multi-hop Reasoning: Answers should require multiple logical operations or connections to arrive at.
+        5. Unique, Deterministic Answer: Ensure only one valid answer can be derived from the data, based on logical connections.
+        6. Simplified Language: Keep the language of questions concise and clear, avoiding unnecessary complexity.
+        7. No Word Overlap: Avoid using the same words or phrases from the row in the questions to maintain a level of difficulty.
+        8. Single Subtle Hint: Include one subtle clue to guide the reasoning, but ensure further deductions are needed for the correct answer.
+        10. Semantic Diversity: Aim for semantic diversity in the questions, avoiding repetition of themes or concepts.
+        11. Multi-step Calculations: Formulate questions that involve multiple calculations or sequential operations (e.g., a combination of addition, multiplication, averaging, and comparisons) that draw from multiple numerical values within the row.
+        12. Indirect Relationships: Encourage indirect reasoning by requiring the combination or comparison of data points that are not obviously connected, fostering deeper numerical insight.
+        13. Layered Operations: Ensure that questions require at least two logical or mathematical steps, such as intermediate calculations followed by a comparison, to arrive at the answer.
+        14. Clear Path to Unique Answer: Design each question to yield a single, unique answer, while ensuring the path to this answer requires complex numerical reasoning.
+    
+    Example Questions:
+       1. In which game could the Philideplhia 76ers could have won if they would have score 4 more points?
+       2. How many days is the new york knicks decemeber game away from christmas?
+       3. Which team other than the NY team lose with 19 points having full attendance?
+       4. In which game did a team win a home game by 10 points and subsequently had to play in denver?
+       5.  Which team was unable to secure a victory despite having a higher total points from their top player?
+
+        Generate {num_pairs} such questions. Ensure that the answer is given in maximum 3-5 words.
+
+        Answer format:
+        Q: <Generated Question>
+        A: <Generated Answer>
